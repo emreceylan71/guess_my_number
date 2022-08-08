@@ -1,32 +1,35 @@
-# Prerequisites
-*.d
 
-# Compiled Object files
-*.slo
-*.lo
-*.o
-*.obj
+#include <iostream>
+using namespace std;
 
-# Precompiled Headers
-*.gch
-*.pch
 
-# Compiled Dynamic libraries
-*.so
-*.dylib
-*.dll
+void Guess(int i, int l) {
+	while (i != l) { 
+		
+		if (i > l) {
+			cout << "Number is bigger than " << l << endl;
+			cin >> l;
+		}
+		if (i < l) {
+			cout << "Number is smaller than " << l << endl;
+			cin >> l;
+		}
+		while (i == l) {
+			cout << "Congrats" << endl;
+			break;// if you not write this it will be overloop 
 
-# Fortran module files
-*.mod
-*.smod
+		}
 
-# Compiled Static libraries
-*.lai
-*.la
-*.a
-*.lib
+	}
 
-# Executables
-*.exe
-*.out
-*.app
+}
+int main()
+{
+	cout << "Guess my number , what is it?" << endl;
+	int i, l;
+	i= rand()  ;
+	cin >> l ;
+	Guess(i, l);// BURADA I VE L DEGERLERINI FONKSIYONA GONDERIYORUZ
+
+	
+}
